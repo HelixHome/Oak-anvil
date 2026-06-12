@@ -56,7 +56,7 @@ export function Nav() {
 
         {/* Center wordmark */}
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <div style={{ fontFamily: 'var(--font-head)', fontWeight: 400, fontSize: 21, letterSpacing: '0.2em', color: ink, paddingLeft: '0.2em', whiteSpace: 'nowrap', transition: 'color .4s' }}>
+          <div style={{ fontFamily: 'var(--font-head)', fontWeight: 400, fontSize: 32, letterSpacing: '0.2em', color: ink, paddingLeft: '0.2em', whiteSpace: 'nowrap', transition: 'color .4s' }}>
             OAK &amp; ANVIL
           </div>
         </Link>
