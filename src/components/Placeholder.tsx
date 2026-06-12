@@ -20,9 +20,10 @@ interface PlaceholderProps {
   anchor?: 'center' | 'bottom'
   src?: string
   alt?: string
+  objectFit?: 'cover' | 'contain'
 }
 
-export function Placeholder({ label, tone = 'sand', className = '', style = {}, sub, zoom = false, anchor = 'center', src, alt }: PlaceholderProps) {
+export function Placeholder({ label, tone = 'sand', className = '', style = {}, sub, zoom = false, anchor = 'center', src, alt, objectFit = 'cover' }: PlaceholderProps) {
   const t = TONES[tone]
   const light = tone === 'deep' || tone === 'char'
 
@@ -50,7 +51,7 @@ export function Placeholder({ label, tone = 'sand', className = '', style = {}, 
           alt={alt ?? label}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit }}
         />
       ) : (
         <>

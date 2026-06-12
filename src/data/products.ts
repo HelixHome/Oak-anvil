@@ -23,7 +23,7 @@ const ALL_UPH: UphId[] = ['natural-linen', 'charcoal-linen', 'oatmeal-boucle', '
 const SLIPCOVER_UPH: UphId[] = ['natural-linen', 'charcoal-linen', 'oatmeal-boucle']
 
 const IMG = '/images/products/extracted'
-const imgs = (slug: string) => [1, 2, 3, 4].map(i => `${IMG}/${slug}_${i}.jpg`)
+const imgs = (slug: string) => [1, 2, 3].map(i => `${IMG}/${slug}_${i}.jpg`)
 
 function mk(
   id: string, name: string, category: Product['category'], price: number, sku: string,
@@ -148,13 +148,13 @@ export const CATEGORIES: Record<string, Category> = {
     name: 'Dining Chairs',
     tagline: 'Seating built for the long table — and the long evening.',
     desc: 'Eight chairs in solid hardwood. Each made to order, each finished by hand.',
-    image: `${EDITORIAL}-1615529328331-f8917597711f?w=1920&h=900&fit=crop&q=80`,
+    image: `${EDITORIAL}-1586023492125-27b2c045efd7?w=1920&h=900&fit=crop&q=80`,
   },
   'counter-stools': {
     id: 'counter-stools',
     name: 'Counter Stools',
     tagline: 'For the island, the bar, the edge of the kitchen.',
     desc: 'Nine stools at counter height. The same joinery, scaled for the kitchen.',
-    image: `${EDITORIAL}-1556910103-1c02745aae4d?w=1920&h=900&fit=crop&q=80`,
+    image: `${EDITORIAL}-1581539250439-c96689b516dd?w=1920&h=900&fit=crop&q=80`,
   },
 }

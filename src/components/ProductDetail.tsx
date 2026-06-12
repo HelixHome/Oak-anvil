@@ -9,7 +9,7 @@ import { WOOD, UPH } from '@/data/products'
 import { fmt } from '@/config/tiers'
 import type { Product, Tone } from '@/types'
 
-const GALLERY = ['FRONT THREE-QUARTER', 'PROFILE', 'SEAT & JOINERY DETAIL', 'IN SITU — DINING ROOM']
+const GALLERY_LABELS = ['Front', 'Three-quarter', 'Profile', 'Detail']
 const RELATED_TONES: Tone[] = ['sand', 'bone', 'stone']
 
 export function ProductDetail({ product, related }: { product: Product; related: Product[] }) {
@@ -74,17 +74,17 @@ export function ProductDetail({ product, related }: { product: Product; related:
 
         {/* Thumbnail rail */}
         <div style={{ position: 'sticky', top: 110, display: 'flex', flexDirection: 'column', gap: 14 }}>
-          {GALLERY.map((label, i) => (
+          {product.images.map((src, i) => (
             <button key={i} onClick={() => setActiveThumb(i)}
-              style={{ padding: 0, border: activeThumb === i ? '1px solid var(--charcoal)' : '1px solid var(--hair)', background: 'none', cursor: 'pointer', aspectRatio: '4/5' }}>
-              <Placeholder label={String(i + 1)} tone={activeThumb === i ? 'stone' : 'bone'} src={product.images[0]} alt={product.name} style={{ width: '100%', height: '100%' }} />
+              style={{ padding: 0, border: activeThumb === i ? '1px solid var(--charcoal)' : '1px solid var(--hair)', background: '#fff', cursor: 'pointer', aspectRatio: '4/5' }}>
+              <Placeholder label={String(i + 1)} tone={activeThumb === i ? 'stone' : 'bone'} src={src} alt={`${product.name} view ${i + 1}`} objectFit="contain" style={{ width: '100%', height: '100%' }} />
             </button>
           ))}
         </div>
 
         {/* Main image */}
-        <div style={{ position: 'sticky', top: 110 }}>
-          <Placeholder label={product.name.toUpperCase()} sub={GALLERY[activeThumb]} tone="sand" src={product.images[0]} alt={product.name} style={{ aspectRatio: '4/5', width: '100%' }} />
+        <div style={{ position: 'sticky', top: 110, background: '#fff' }}>
+          <Placeholder label={product.name.toUpperCase()} sub={GALLERY_LABELS[activeThumb]} tone="sand" src={product.images[activeThumb]} alt={product.name} objectFit="contain" style={{ aspectRatio: '4/5', width: '100%' }} />
         </div>
 
         {/* Info column */}
