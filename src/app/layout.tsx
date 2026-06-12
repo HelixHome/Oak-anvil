@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Bodoni_Moda, Jost, Space_Mono } from 'next/font/google'
+import { CartProvider } from '@/context/CartContext'
 import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/Footer'
+import { CartDrawer } from '@/components/CartDrawer'
 import './globals.css'
 
 const fontHead = Bodoni_Moda({
@@ -32,14 +34,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${fontHead.variable} ${fontBody.variable} ${fontMono.variable}`}
-    >
+    <html lang="en" className={`${fontHead.variable} ${fontBody.variable} ${fontMono.variable}`}>
       <body>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   )

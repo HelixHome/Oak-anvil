@@ -2,17 +2,15 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { useCart } from '@/context/CartContext'
 
 const HERO_PATHS = ['/', '/dining-chairs', '/counter-stools']
 
-interface NavProps {
-  cartCount?: number
-}
-
-export function Nav({ cartCount = 0 }: NavProps) {
+export function Nav() {
   const pathname = usePathname()
   const hasHero = HERO_PATHS.includes(pathname)
   const [solid, setSolid] = useState(!hasHero)
+  const { totalItems, openCart } = useCart()
 
   useEffect(() => {
     if (!hasHero) { setSolid(true); return }
@@ -36,18 +34,16 @@ export function Nav({ cartCount = 0 }: NavProps) {
 
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 60 }}>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr auto 1fr',
-          alignItems: 'center',
-          padding: '0 40px',
-          height: 78,
-          background: solid ? 'var(--ivory)' : 'transparent',
-          borderBottom: solid ? '1px solid var(--hair)' : '1px solid transparent',
-          transition: 'background .5s ease, border-color .5s ease',
-        }}
-      >
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr auto 1fr',
+        alignItems: 'center',
+        padding: '0 40px',
+        height: 78,
+        background: solid ? 'var(--ivory)' : 'transparent',
+        borderBottom: solid ? '1px solid var(--hair)' : '1px solid transparent',
+        transition: 'background .5s ease, border-color .5s ease',
+      }}>
         {/* Left nav */}
         <nav style={{ display: 'flex', gap: 30, alignItems: 'center' }}>
           <Link href="/dining-chairs" style={linkStyle}>Dining Chairs</Link>
@@ -70,10 +66,11 @@ export function Nav({ cartCount = 0 }: NavProps) {
             Trade
           </Link>
           <button
+            onClick={openCart}
             style={{ ...linkStyle, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', padding: 0 }}
-            aria-label={`Cart, ${cartCount} item${cartCount === 1 ? '' : 's'}`}
+            aria-label={`Cart, ${totalItems} item${totalItems === 1 ? '' : 's'}`}
           >
-            Cart ({cartCount})
+            Cart ({totalItems})
           </button>
         </nav>
       </div>
