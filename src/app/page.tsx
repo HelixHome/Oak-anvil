@@ -5,7 +5,7 @@ import { ScrollReveal } from '@/components/ScrollReveal'
 import { PRODUCTS, CATEGORIES } from '@/data/products'
 import type { Tone } from '@/types'
 
-const FEATURED_IDS = ['thatcher', 'foundry', 'marlowe', 'wren']
+const FEATURED_IDS = ['madeline', 'shelton', 'sasha', 'burnett']
 const FEATURED_TONES: Tone[] = ['sand', 'bone', 'stone', 'sand']
 
 export default function HomePage() {

@@ -1,6 +1,6 @@
 export type CategoryId = 'dining-chairs' | 'counter-stools'
-export type WoodId = 'smoked-oak' | 'natural-oak' | 'blackened-ash' | 'walnut' | 'weathered-grey'
-export type UphId = 'belgian-linen' | 'charcoal-wool' | 'saddle-leather' | 'putty-boucle' | 'fog-linen'
+export type WoodId = 'drift-oak' | 'burnt-oak'
+export type UphId = 'natural-linen' | 'charcoal-linen' | 'oatmeal-boucle' | 'ivory-boucle' | 'stone-velvet'
 export type TierId = 'retail' | 'stocking' | 'trade' | 'designer'
 export type Tone = 'sand' | 'bone' | 'stone' | 'deep' | 'char'
 
