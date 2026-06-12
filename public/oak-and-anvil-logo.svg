@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Jost:wght@300;400;500&amp;display=swap');
+      .wordmark {
+        font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+        font-weight: 300;
+        font-size: 64px;
+        letter-spacing: 0.12em;
+        fill: #1C1A17;
+      }
+      .sub {
+        font-family: 'Jost', 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 11px;
+        letter-spacing: 0.28em;
+        fill: #8B7355;
+      }
+      .est {
+        font-family: 'Jost', 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        fill: #C9BBA8;
+      }
+    </style>
+  </defs>
+
+  <!-- Est. line -->
+  <text x="300" y="36" text-anchor="middle" class="est">EST. 2002</text>
+
+  <!-- Main wordmark -->
+  <text x="300" y="112" text-anchor="middle" class="wordmark">OAK &amp; ANVIL</text>
+
+  <!-- Divider line -->
+  <line x1="252" y1="126" x2="348" y2="126" stroke="#8B7355" stroke-width="0.75"/>
+
+  <!-- Tagline -->
+  <text x="300" y="150" text-anchor="middle" class="sub">THE CONSIDERED HOME</text>
+</svg>
