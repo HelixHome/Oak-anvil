@@ -17,6 +17,7 @@ export function Footer() {
           <p className="t-small" style={{ color: 'var(--greige)', marginTop: 24, maxWidth: 260 }}>
             Heirloom-quality seating in solid wood. Made to order, sold direct.
           </p>
+          <div className="mono" style={{ color: 'var(--greige)', fontSize: 9, letterSpacing: '0.28em', marginTop: 18, opacity: 0.7 }}>Est. 2002</div>
         </div>
 
         {/* Customer Care */}

@@ -55,9 +55,12 @@ export function Nav() {
         </nav>
 
         {/* Center wordmark */}
-        <Link href="/" style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
           <div style={{ fontFamily: 'var(--font-head)', fontWeight: 400, fontSize: 42, letterSpacing: '0.2em', color: ink, paddingLeft: '0.2em', whiteSpace: 'nowrap', transition: 'color .4s' }}>
             OAK &amp; ANVIL
+          </div>
+          <div className="mono" style={{ fontSize: 8, letterSpacing: '0.32em', color: ink, opacity: 0.5, transition: 'color .4s', paddingLeft: '0.32em' }}>
+            Est. 2002
           </div>
         </Link>
 
