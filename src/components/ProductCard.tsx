@@ -17,6 +17,8 @@ export function ProductCard({ product, tone = 'sand' }: ProductCardProps) {
           label={product.name.toUpperCase()}
           sub={product.sku}
           tone={tone}
+          src={product.images[0]}
+          alt={product.name}
           style={{ aspectRatio: '4 / 5', width: '100%' }}
         />
       </div>

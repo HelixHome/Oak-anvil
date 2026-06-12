@@ -20,6 +20,7 @@ export interface Product {
   materials: string
   care: string
   shipping: string
+  images: string[]
 }
 
 export interface Category {
@@ -27,6 +28,7 @@ export interface Category {
   name: string
   tagline: string
   desc: string
+  image: string
 }
 
 export interface Tier {

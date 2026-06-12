@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { CSSProperties } from 'react'
 import type { Tone } from '@/types'
 
@@ -17,9 +18,11 @@ interface PlaceholderProps {
   sub?: string
   zoom?: boolean
   anchor?: 'center' | 'bottom'
+  src?: string
+  alt?: string
 }
 
-export function Placeholder({ label, tone = 'sand', className = '', style = {}, sub, zoom = false, anchor = 'center' }: PlaceholderProps) {
+export function Placeholder({ label, tone = 'sand', className = '', style = {}, sub, zoom = false, anchor = 'center', src, alt }: PlaceholderProps) {
   const t = TONES[tone]
   const light = tone === 'deep' || tone === 'char'
 
@@ -34,21 +37,34 @@ export function Placeholder({ label, tone = 'sand', className = '', style = {}, 
         position: 'relative',
         overflow: 'hidden',
         background: t.bg,
-        backgroundImage: `repeating-linear-gradient(135deg, ${light ? 'rgba(255,255,255,0.018)' : 'rgba(43,43,43,0.022)'} 0 1px, transparent 1px 26px)`,
+        backgroundImage: src ? 'none' : `repeating-linear-gradient(135deg, ${light ? 'rgba(255,255,255,0.018)' : 'rgba(43,43,43,0.022)'} 0 1px, transparent 1px 26px)`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         ...style,
       }}
     >
-      <div style={labelBox}>
-        <div className="mono" style={{ color: t.ink, opacity: 0.92 }}>{label}</div>
-        {sub && <div className="mono" style={{ color: t.ink, opacity: 0.55, marginTop: 6, fontSize: 9 }}>{sub}</div>}
-      </div>
-      <Corner pos="tl" ink={t.ink} />
-      <Corner pos="tr" ink={t.ink} />
-      <Corner pos="bl" ink={t.ink} />
-      <Corner pos="br" ink={t.ink} />
+      {src ? (
+        <Image
+          src={src}
+          alt={alt ?? label}
+          fill
+          unoptimized
+          sizes="(max-width: 768px) 100vw, 50vw"
+          style={{ objectFit: 'cover' }}
+        />
+      ) : (
+        <>
+          <div style={labelBox}>
+            <div className="mono" style={{ color: t.ink, opacity: 0.92 }}>{label}</div>
+            {sub && <div className="mono" style={{ color: t.ink, opacity: 0.55, marginTop: 6, fontSize: 9 }}>{sub}</div>}
+          </div>
+          <Corner pos="tl" ink={t.ink} />
+          <Corner pos="tr" ink={t.ink} />
+          <Corner pos="bl" ink={t.ink} />
+          <Corner pos="br" ink={t.ink} />
+        </>
+      )}
     </div>
   )
 }

@@ -77,14 +77,14 @@ export function ProductDetail({ product, related }: { product: Product; related:
           {GALLERY.map((label, i) => (
             <button key={i} onClick={() => setActiveThumb(i)}
               style={{ padding: 0, border: activeThumb === i ? '1px solid var(--charcoal)' : '1px solid var(--hair)', background: 'none', cursor: 'pointer', aspectRatio: '4/5' }}>
-              <Placeholder label={String(i + 1)} tone={activeThumb === i ? 'stone' : 'bone'} style={{ width: '100%', height: '100%' }} />
+              <Placeholder label={String(i + 1)} tone={activeThumb === i ? 'stone' : 'bone'} src={product.images[0]} alt={product.name} style={{ width: '100%', height: '100%' }} />
             </button>
           ))}
         </div>
 
         {/* Main image */}
         <div style={{ position: 'sticky', top: 110 }}>
-          <Placeholder label={product.name.toUpperCase()} sub={GALLERY[activeThumb]} tone="sand" style={{ aspectRatio: '4/5', width: '100%' }} />
+          <Placeholder label={product.name.toUpperCase()} sub={GALLERY[activeThumb]} tone="sand" src={product.images[0]} alt={product.name} style={{ aspectRatio: '4/5', width: '100%' }} />
         </div>
 
         {/* Info column */}

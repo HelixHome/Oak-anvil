@@ -21,6 +21,8 @@ export default function HomePage() {
           label="FULL-BLEED LIFESTYLE — DINING ROOM"
           sub="hero · supplied photography"
           tone="deep"
+          src="https://source.unsplash.com/featured/1920x1080/?luxury-dining-room-interior&sig=200"
+          alt="Luxury dining room interior"
           style={{ position: 'absolute', inset: 0 }}
         />
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', paddingBottom: '13vh', textAlign: 'center' }}>
@@ -56,6 +58,8 @@ export default function HomePage() {
                     label={cat.name.toUpperCase()}
                     sub="category lifestyle · 3:2"
                     tone={i === 0 ? 'sand' : 'stone'}
+                    src={cat.image}
+                    alt={cat.name}
                     style={{ aspectRatio: '3 / 2.1' }}
                   />
                 </div>
@@ -80,6 +84,8 @@ export default function HomePage() {
             label="JOINERY DETAIL — MORTISE & TENON"
             sub="materials · 4:5"
             tone="stone"
+            src="https://source.unsplash.com/featured/800x1000/?woodworking-joinery-craft&sig=500"
+            alt="Wood joinery detail"
             style={{ aspectRatio: '4 / 5' }}
           />
           <div className="reveal-up" style={{ maxWidth: 440 }}>

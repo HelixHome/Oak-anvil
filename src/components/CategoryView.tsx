@@ -30,6 +30,8 @@ export function CategoryView({ category, products }: CategoryViewProps) {
           label={category.name.toUpperCase() + ' — CATEGORY HERO'}
           sub="supplied photography"
           tone="deep"
+          src={category.image}
+          alt={category.name}
           style={{ position: 'absolute', inset: 0 }}
         />
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
