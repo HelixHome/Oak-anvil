@@ -41,7 +41,7 @@ const BLOCKS: Block[] = [
   {
     mark: '04 — Direct',
     title: 'No Room Full of Middlemen',
-    body: 'We sell straight from the workshop to your table. The markup that usually stacks up across importers, showrooms, and floor staff simply is not in the price. That is the whole model: make a few things well, sell them honestly.',
+    body: 'We source directly from factory relationships built over 20 years — the same suppliers used by the top wholesale brands, without the layers of agents and showroom markup. The value is the discovery, not the headline.',
     img: 'DELIVERY — CRATED & READY',
     tone: 'stone',
     src: `${CDN}-1615529328331-f8917597711f?w=800&h=1000&fit=crop&q=80`,
@@ -79,8 +79,11 @@ export default function AboutPage() {
 
       {/* Intro */}
       <section style={{ padding: 'var(--sp-10) 40px', textAlign: 'center' }}>
-        <p className="reveal-up t-h2" style={{ maxWidth: 760, margin: '0 auto', lineHeight: 1.5, color: 'var(--charcoal-soft)' }}>
-          We started in 2002 with a single bench and a stubborn idea: that good seating should be solid wood, joined properly, and priced like the workshop sold it to you directly. It does, because we do.
+        <p className="reveal-up t-h2" style={{ maxWidth: 800, margin: '0 auto', lineHeight: 1.6, color: 'var(--charcoal-soft)' }}>
+          We start with the pieces that set the tone for how a room is lived in — the seating that gathers people around a table, the chair that makes you linger, the stool that becomes part of the morning ritual.
+        </p>
+        <p className="reveal-up t-body" style={{ maxWidth: 620, margin: '32px auto 0', color: 'var(--greige)' }}>
+          The right piece doesn&rsquo;t announce itself. It simply belongs — and looks better in five years than it did the day it arrived. Built on 20+ years of direct factory relationships, we bring you quality that would cost far more anywhere else, without the layers of margin in between.
         </p>
       </section>
 

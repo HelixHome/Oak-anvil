@@ -27,9 +27,9 @@ export default function HomePage() {
         />
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', paddingBottom: '13vh', textAlign: 'center' }}>
           <div className="eyebrow" style={{ color: 'rgba(247,245,241,0.7)', marginBottom: 24 }}>The Considered Home</div>
-          <h1 className="t-display" style={{ color: 'var(--ivory)', maxWidth: 900 }}>Seating, Made to Outlast Us</h1>
-          <p className="t-body" style={{ color: 'rgba(247,245,241,0.85)', maxWidth: 440, margin: '24px 0 34px' }}>
-            Solid-wood dining chairs and counter stools. Imported, finished by hand, sold direct.
+          <h1 className="t-display" style={{ color: 'var(--ivory)', maxWidth: 900 }}>Furniture That Knows What It Is</h1>
+          <p className="t-body" style={{ color: 'rgba(247,245,241,0.85)', maxWidth: 460, margin: '24px 0 34px' }}>
+            Dining chairs and counter stools designed with a clear point of view. Warm, organic, considered — and priced the way they should be.
           </p>
           <Link href="/dining-chairs" className="link-reveal reveal" style={{ color: 'var(--ivory)' }}>
             Shop the Collection
@@ -92,10 +92,10 @@ export default function HomePage() {
             <div className="eyebrow">The Making</div>
             <h2 className="t-h1" style={{ margin: '20px 0 24px' }}>One Joint, Cut a Thousand Times</h2>
             <p className="t-body" style={{ color: 'var(--charcoal-soft)' }}>
-              Every chair begins as kiln-dried solid hardwood — no veneer, no particleboard. Frames are joined with mortise-and-tenon work, glued and pinned, then finished in a low-sheen penetrating oil that lets the grain stay honest.
+              The right piece doesn't announce itself. It simply belongs — and looks better in five years than it did the day it arrived. Every chair begins as solid hardwood, joined properly, finished by hand.
             </p>
             <p className="t-body" style={{ color: 'var(--charcoal-soft)', marginTop: 18 }}>
-              We sell direct, so the markup that usually sits between the workshop and your table simply isn't there.
+              We source directly from the same factories we've worked with for over 20 years — which means you get quality that would cost far more anywhere else, without the layers of margin in between.
             </p>
             <div style={{ marginTop: 34 }}>
               <Link href="/about" className="link-reveal reveal">Read Our Craft</Link>
@@ -129,7 +129,7 @@ export default function HomePage() {
         <div className="reveal-up" style={{ maxWidth: 720, margin: '0 auto' }}>
           <div className="eyebrow" style={{ color: 'rgba(247,245,241,0.55)', marginBottom: 28 }}>Sold Direct</div>
           <p className="t-h2" style={{ color: 'var(--ivory)', lineHeight: 1.5 }}>
-            &ldquo;We make a few things, in solid wood, and we make them properly. Then we sell them to you without the room full of middlemen.&rdquo;
+            &ldquo;There&rsquo;s a certain kind of home you feel the moment you walk through the door. Warm without trying. Pulled together without being precious. Every piece exactly where it belongs. Oak &amp; Anvil is designed for that home.&rdquo;
           </p>
         </div>
       </section>

@@ -7,15 +7,16 @@
   --bone:          #F1EEE7;
   --sand:          #E9E4DA;
   --stone:         #DED8CC;
-  --charcoal:      #2B2B2B;
-  --charcoal-soft: #4A4843;
+  --charcoal:      #1C1A17;
+  --charcoal-soft: #3D3A35;
   --greige:        #8A8276;
   --taupe:         #8B7355;
-  --hair:          rgba(43, 43, 43, 0.16);
-  --hair-soft:     rgba(43, 43, 43, 0.09);
+  --linen:         #C9BBA8;
+  --hair:          rgba(28, 26, 23, 0.16);
+  --hair-soft:     rgba(28, 26, 23, 0.09);
 
   /* Fonts — overridden by next/font class applied to <html> */
-  --font-head: 'Bodoni Moda', serif;
+  --font-head: 'Cormorant Garamond', serif;
   --font-body: 'Jost', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
