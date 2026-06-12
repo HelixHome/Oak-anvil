@@ -21,7 +21,7 @@ export default function HomePage() {
           label="FULL-BLEED LIFESTYLE — DINING ROOM"
           sub="hero · supplied photography"
           tone="deep"
-          src="https://source.unsplash.com/featured/1920x1080/?luxury-dining-room-interior&sig=200"
+          src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=1920&h=1080&fit=crop&q=80"
           alt="Luxury dining room interior"
           style={{ position: 'absolute', inset: 0 }}
         />
@@ -84,7 +84,7 @@ export default function HomePage() {
             label="JOINERY DETAIL — MORTISE & TENON"
             sub="materials · 4:5"
             tone="stone"
-            src="https://source.unsplash.com/featured/800x1000/?woodworking-joinery-craft&sig=500"
+            src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=800&h=1000&fit=crop&q=80"
             alt="Wood joinery detail"
             style={{ aspectRatio: '4 / 5' }}
           />

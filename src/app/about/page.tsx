@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'How a chair earns its keep. Our approach to wood sourcing, joinery, finishing, and selling direct.',
 }
 
-const UNS = 'https://source.unsplash.com/featured'
+const CDN = 'https://images.unsplash.com/photo'
 type Block = { mark: string; title: string; body: string; img: string; tone: Tone; src: string }
 
 const BLOCKS: Block[] = [
@@ -20,7 +20,7 @@ const BLOCKS: Block[] = [
     body: 'We buy kiln-dried solid hardwood from mills that replant what they take. Oak, ash, walnut — no veneer over fiberboard, no shortcuts hidden inside the frame. The wood you see is the wood that holds you up.',
     img: 'TIMBER YARD — STACKED HARDWOOD',
     tone: 'stone',
-    src: `${UNS}/800x1000/?timber-lumber-wood-stack&sig=300`,
+    src: `${CDN}-1519947486511-46149fa0a254?w=800&h=1000&fit=crop&q=80`,
   },
   {
     mark: '02 — Joinery',
@@ -28,7 +28,7 @@ const BLOCKS: Block[] = [
     body: 'Each frame is joined the slow way: a tenon cut to fit a mortise, glued, pinned, and clamped overnight. It is the joint that has held chairs together for four hundred years, and it is the reason ours will outlast their first owners.',
     img: 'WORKSHOP — HAND-CUT JOINERY',
     tone: 'sand',
-    src: `${UNS}/800x1000/?woodworking-workshop-carpentry&sig=301`,
+    src: `${CDN}-1550254478-ead40cc54513?w=800&h=1000&fit=crop&q=80`,
   },
   {
     mark: '03 — Finishing',
@@ -36,7 +36,7 @@ const BLOCKS: Block[] = [
     body: 'We finish in a low-sheen penetrating oil rubbed in by hand. It sinks into the grain rather than sitting on top of it, so the wood keeps its depth and can be renewed at home with a cloth and an afternoon.',
     img: 'FINISHING — HAND-RUBBED OIL',
     tone: 'bone',
-    src: `${UNS}/800x1000/?wood-grain-texture-craftsmanship&sig=302`,
+    src: `${CDN}-1556910103-1c02745aae4d?w=800&h=1000&fit=crop&q=80`,
   },
   {
     mark: '04 — Direct',
@@ -44,7 +44,7 @@ const BLOCKS: Block[] = [
     body: 'We sell straight from the workshop to your table. The markup that usually stacks up across importers, showrooms, and floor staff simply is not in the price. That is the whole model: make a few things well, sell them honestly.',
     img: 'DELIVERY — CRATED & READY',
     tone: 'stone',
-    src: `${UNS}/800x1000/?interior-design-furniture-home&sig=303`,
+    src: `${CDN}-1615529328331-f8917597711f?w=800&h=1000&fit=crop&q=80`,
   },
 ]
 
@@ -58,7 +58,7 @@ export default function AboutPage() {
           label="FULL-BLEED — WORKSHOP FLOOR"
           sub="about hero"
           anchor="bottom"
-          src={`${UNS}/1920x900/?woodworking-workshop-artisan&sig=400`}
+          src={`${CDN}-1598928506311-c55ded91a20c?w=1920&h=900&fit=crop&q=80`}
           alt="Artisan woodworking workshop"
           style={{ position: 'absolute', inset: 0 }}
         />

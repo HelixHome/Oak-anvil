@@ -49,7 +49,6 @@ export function Placeholder({ label, tone = 'sand', className = '', style = {}, 
           src={src}
           alt={alt ?? label}
           fill
-          unoptimized
           sizes="(max-width: 768px) 100vw, 50vw"
           style={{ objectFit: 'cover' }}
         />
