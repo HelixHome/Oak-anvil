@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
+/* ── CSS custom properties (inline-style access & CSS classes) ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --ivory:         #F7F5F1;
+  --bone:          #F1EEE7;
+  --sand:          #E9E4DA;
+  --stone:         #DED8CC;
+  --charcoal:      #2B2B2B;
+  --charcoal-soft: #4A4843;
+  --greige:        #8A8276;
+  --taupe:         #8B7355;
+  --hair:          rgba(43, 43, 43, 0.16);
+  --hair-soft:     rgba(43, 43, 43, 0.09);
+
+  /* Fonts — overridden by next/font class applied to <html> */
+  --font-head: 'Bodoni Moda', serif;
+  --font-body: 'Jost', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Spacing scale — 8px base */
+  --sp-1: 4px;   --sp-2: 8px;    --sp-3: 16px;
+  --sp-4: 24px;  --sp-5: 32px;   --sp-6: 48px;
+  --sp-7: 64px;  --sp-8: 96px;   --sp-9: 128px;
+  --sp-10: 160px; --sp-11: 192px;
+
+  /* Layout */
+  --maxw:   1480px;
+  --gutter: 40px;
 }
 
+/* ── Tailwind theme — color utilities (bg-ivory, text-charcoal, etc.) ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory:         var(--ivory);
+  --color-bone:          var(--bone);
+  --color-sand:          var(--sand);
+  --color-stone:         var(--stone);
+  --color-charcoal:      var(--charcoal);
+  --color-charcoal-soft: var(--charcoal-soft);
+  --color-greige:        var(--greige);
+  --color-taupe:         var(--taupe);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base reset ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--charcoal);
+  background: var(--ivory);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  margin: 0;
 }
+
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font-family: var(--font-body); }
+
+::selection { background: var(--taupe); color: var(--ivory); }
+
+/* ── Type ramp ─────────────────────────────────────────────────── */
+.t-display {
+  font-family: var(--font-head);
+  font-weight: 400;
+  font-size: clamp(38px, 5.2vw, 82px);
+  line-height: 1.04;
+  letter-spacing: 0.04em;
+}
+.t-h1 {
+  font-family: var(--font-head);
+  font-weight: 400;
+  font-size: clamp(30px, 3.4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+.t-h2 {
+  font-family: var(--font-head);
+  font-weight: 400;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.18;
+  letter-spacing: 0.06em;
+}
+.t-h3 {
+  font-family: var(--font-head);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  white-space: nowrap;
+  color: var(--greige);
+}
+.t-body  { font-size: 16px;   font-weight: 300; line-height: 1.75; }
+.t-small { font-size: 13.5px; font-weight: 300; line-height: 1.7; }
+.t-micro {
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+}
+.mono {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+.btn {
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  padding: 17px 38px;
+  border: 1px solid var(--charcoal);
+  background: transparent;
+  color: var(--charcoal);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 0;
+  text-decoration: none;
+}
+.btn:hover { background: var(--charcoal); color: var(--ivory); }
+.btn-solid { background: var(--charcoal); color: var(--ivory); }
+.btn-solid:hover { background: #000; }
+.btn-light { border-color: rgba(247,245,241,0.7); color: var(--ivory); }
+.btn-light:hover { background: var(--ivory); color: var(--charcoal); border-color: var(--ivory); }
+.btn-block { width: 100%; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Underline reveal link ─────────────────────────────────────── */
+.link-reveal {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  padding-bottom: 4px;
+  cursor: pointer;
+  color: var(--charcoal);
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+.link-reveal::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-reveal.reveal::after { transform: scaleX(0); }
+.link-reveal.reveal:hover::after { transform: scaleX(1); }
+
+/* ── Scroll reveal ─────────────────────────────────────────────── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-up.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Image hover zoom (works for nested descendants) ──────────── */
+.oa-ph-zoom {
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+a:hover .oa-ph-zoom,
+button:hover .oa-ph-zoom { transform: scale(1.045); }
+
+/* ── Misc ──────────────────────────────────────────────────────── */
+.no-bar::-webkit-scrollbar { display: none; }
+.no-bar { scrollbar-width: none; }
