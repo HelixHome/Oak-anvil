@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Bodoni_Moda, Jost, Space_Mono } from 'next/font/google'
 import { CartProvider } from '@/context/CartContext'
+import { DealerProvider } from '@/context/DealerContext'
 import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/Footer'
 import { CartDrawer } from '@/components/CartDrawer'
@@ -36,12 +37,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${fontHead.variable} ${fontBody.variable} ${fontMono.variable}`}>
       <body>
-        <CartProvider>
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-          <CartDrawer />
-        </CartProvider>
+        <DealerProvider>
+          <CartProvider>
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+            <CartDrawer />
+          </CartProvider>
+        </DealerProvider>
       </body>
     </html>
   )

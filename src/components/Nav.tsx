@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useCart } from '@/context/CartContext'
+import { useDealer } from '@/context/DealerContext'
+import { TIERS } from '@/config/tiers'
 
 const HERO_PATHS = ['/', '/dining-chairs', '/counter-stools']
 
@@ -11,6 +13,7 @@ export function Nav() {
   const hasHero = HERO_PATHS.includes(pathname)
   const [solid, setSolid] = useState(!hasHero)
   const { totalItems, openCart } = useCart()
+  const { dealer } = useDealer()
 
   useEffect(() => {
     if (!hasHero) { setSolid(true); return }
@@ -61,10 +64,16 @@ export function Nav() {
         {/* Right nav */}
         <nav style={{ display: 'flex', gap: 28, alignItems: 'center', justifyContent: 'flex-end' }}>
           <Link href="/contact" style={linkStyle}>Contact</Link>
-          <Link href="/trade" style={{ ...linkStyle, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', border: '1px solid currentColor', display: 'inline-block', flexShrink: 0 }} />
-            Trade
-          </Link>
+          {dealer ? (
+            <span className="mono" style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--taupe)', whiteSpace: 'nowrap' }}>
+              Trade · {Math.round(TIERS[dealer.tier].off * 100)}% off
+            </span>
+          ) : (
+            <Link href="/trade" style={{ ...linkStyle, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ width: 5, height: 5, borderRadius: '50%', border: '1px solid currentColor', display: 'inline-block', flexShrink: 0 }} />
+              Trade
+            </Link>
+          )}
           <button
             onClick={openCart}
             style={{ ...linkStyle, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', padding: 0 }}
