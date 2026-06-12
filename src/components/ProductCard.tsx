@@ -11,7 +11,7 @@ interface ProductCardProps {
 export function ProductCard({ product, tone = 'sand' }: ProductCardProps) {
   return (
     <Link href={`/products/${product.handle}`} style={{ display: 'block', textDecoration: 'none' }}>
-      <div style={{ overflow: 'hidden' }}>
+      <div style={{ overflow: 'hidden', background: '#fff' }}>
         <Placeholder
           zoom
           label={product.name.toUpperCase()}
@@ -19,6 +19,7 @@ export function ProductCard({ product, tone = 'sand' }: ProductCardProps) {
           tone={tone}
           src={product.images[0]}
           alt={product.name}
+          objectFit="contain"
           style={{ aspectRatio: '4 / 5', width: '100%' }}
         />
       </div>
