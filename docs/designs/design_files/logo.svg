@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <defs>
+    
+  </defs>
+
+  
+  <text x="300" y="36" text-anchor="middle" class="est">EST. 2002</text>
+
+  
+  <text x="300" y="112" text-anchor="middle" class="wordmark">OAK &amp; ANVIL</text>
+
+  
+  <line x1="252" y1="126" x2="348" y2="126" stroke="#8B7355" stroke-width="0.75"></line>
+
+  
+  <text x="300" y="150" text-anchor="middle" class="sub">THE CONSIDERED HOME</text>
+</svg>

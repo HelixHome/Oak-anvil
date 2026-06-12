@@ -6,7 +6,7 @@
 
 Premium DTC furniture e-commerce site for Oak & Anvil. Restoration Hardware-inspired aesthetic. 15 products in 2 categories (Dining Chairs, Counter Stools) at launch, plus a separate B2B dealer portal with tiered pricing.
 
-Full design spec: `docs/design-spec.md`. Approved design screens: `docs/designs/` (not yet populated — using the written spec for now).
+Full design spec: `docs/design-spec.md` (original brief). **Primary visual reference: `docs/designs/handoff-README.md`** — a complete high-fidelity handoff with exact design tokens (colors, type ramp, spacing, motion), per-screen specs for all 11 views, and a working HTML/React prototype in `docs/designs/design_files/`. Treat the prototype as the source of truth for layout, tokens, copy, and interaction — recreate it in Next.js/Tailwind using this codebase's conventions, don't copy the JSX verbatim.
 
 ## Stack
 
@@ -16,11 +16,12 @@ Full design spec: `docs/design-spec.md`. Approved design screens: `docs/designs/
 
 ## Design system (non-negotiable)
 
-- Background ivory `#F7F5F1`, text charcoal `#2B2B2B`, taupe accents. NO bright colors, NO rounded corners, NO drop shadows, NO sale badges.
-- Headings: wide-tracked all-caps serif (0.2–0.3em letterspacing). Restrained body text.
-- Extreme whitespace; large vertical section padding; hairline borders only.
-- Buttons: ghost/outline or solid charcoal. Hover: subtle image zoom, underline reveals. Motion: slow fades only.
-- Define tokens in Tailwind theme config — never hardcode colors/spacing in components.
+- Background ivory `#F7F5F1`, text charcoal `#2B2B2B`, taupe `#8B7355` accent (sole accent, used sparingly). NO bright colors, NO rounded corners, NO drop shadows, NO sale badges.
+- Headings: serif display font (Bodoni Moda default), wide-tracked all-caps. Restrained body text (Jost). Mono labels (Space Mono) for SKUs/technical text.
+- 8px spacing scale (`--sp-1`…`--sp-11`, 4–192px); content max-width 1480px; 40px page gutter.
+- Extreme whitespace; large vertical section padding (128–160px); hairline borders only (`rgba(43,43,43,0.16)`).
+- Buttons: ghost/outline or solid charcoal. Hover: subtle image zoom (scale 1.045), underline reveals. Motion: slow fades (1.1s) only, respect `prefers-reduced-motion`.
+- Full token table, type ramp, and component specs: `docs/designs/handoff-README.md`. Define all tokens in Tailwind theme config — never hardcode colors/spacing in components.
 
 ## Site map
 
@@ -30,7 +31,7 @@ Dealer (under /trade): login, application form, dashboard (tier display, order p
 
 ## Dealer tiers
 
-Three tiers stored as Shopify customer tags: `tier:stocking` (50% off retail), `tier:trade` (40%), `tier:designer` (30%). Discount percentages live in one config file (`src/config/tiers.ts`) — never scattered. Checkout pricing via Shopify automatic discounts scoped to customer tags (or draft orders from the order pad) — display logic is ours, money logic is Shopify's.
+Three tiers stored as Shopify customer tags: `tier:stocking` (50% off retail), `tier:trade` (40%), `tier:designer` (20%). Discount percentages live in one config file (`src/config/tiers.ts`) — never scattered. Checkout pricing via Shopify automatic discounts scoped to customer tags (or draft orders from the order pad) — display logic is ours, money logic is Shopify's.
 
 ## Conventions
 
